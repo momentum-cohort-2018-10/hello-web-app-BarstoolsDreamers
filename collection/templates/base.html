@@ -4,26 +4,26 @@
 <head>
     <title>
         {% block title %}
-            Shakori Hello Web App Project
+            Shakori Volunteer Registration
         {% endblock title %}
     </title>
     <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
     {% block header %}{% endblock header %}
 </head>
 <body>
-    <header>
-        <h1>Hello Web App</h1>
+<header>
+        <h1>Shakori Hills Volunteer Portal</h1>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'register' %}">Register Form</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
         </nav>
     </header>
     {% block content %}{% endblock content %}
-    {% block footer %}{% endblock footer %}
-    <!-- as well as override content bits-->
+    {% block footer %}{% endblock footer %} 
 </body>
 </html>
-
+    <!-- as well as override content bits-->
