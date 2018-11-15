@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from collection.models import Volunteers
+from collection.models import Contact
 
 
 def index(request):
-    things = Volunteers.objects.all()
+    volunteers = Contact.objects.all()
     return render(request, 'index.html', {
-        'things': things,
+        'volunteers': volunteers,
     })
