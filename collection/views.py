@@ -1,10 +1,9 @@
 from django.shortcuts import render
+from collection.models import Volunteers
 
 
 def index(request):
-    number = 6
-    thing = "Shakori Hills"
+    things = Volunteers.objects.all()
     return render(request, 'index.html', {
-        'number': number,
-        'thing': thing,
+        'things': things,
     })
