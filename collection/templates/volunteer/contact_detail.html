@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}
+    {{ volunteer.name }} - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+
+    <h2>{{ contact.name }}</h2>
+    <p>{{ contact.description }}</p>
+   
+{% endblock content %}
+
