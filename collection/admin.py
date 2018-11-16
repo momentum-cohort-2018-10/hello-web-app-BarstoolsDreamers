@@ -1,13 +1,13 @@
 from django.contrib import admin
 # Register your models here.
 
-from collection.models import Contact
+from collection.models import Volunteer
 
 
 class VolunteersAdmin(admin.ModelAdmin):
-    model = Contact
+    model = Volunteer
     list_display = ('name', 'description',)
     prepopulated_fields = {'slug': ('name',)}
 
 
-admin.site.register(Contact, VolunteersAdmin)
+admin.site.register(Volunteer, VolunteersAdmin)

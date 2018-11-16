@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 {% load humanize %}
 {% block title %}
-    Shakori Hills Volunteer Registration - {{ block.super }}
+    Shakori Hills Volunteer Portal - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
     {% for volunteer in volunteers %}
-    <h2>{{ volunteer.name }}</h2>
-    <p>{{ volunteer.description }}</p>
+    <h2><a href="{% url 'volunteer_detail' slug=volunteer.slug %}">
+        {{ volunteer.name }}
+        </a></h2>
+        <p>{{ volunteer.description }}</p>
     {% endfor %}
 {% endblock content %}
 

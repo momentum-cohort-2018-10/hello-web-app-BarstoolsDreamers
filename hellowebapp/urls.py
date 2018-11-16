@@ -20,11 +20,13 @@ from collection import views
 
 urlpatterns = [
     path('', views.index, name="home"),
-    path('register/',
-         TemplateView.as_view(template_name='register.html'),
-         name='register'),
+    path('form/',
+         TemplateView.as_view(template_name='form.html'),
+         name='form'),
     path('contact/',
          TemplateView.as_view(template_name='contact.html'),
          name='contact'),
+    path('volunteer/<slug>/', views.volunteer_detail,
+         name='volunteer_detail'),
     path('admin/', admin.site.urls),
 ]

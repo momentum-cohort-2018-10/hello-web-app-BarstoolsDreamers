@@ -13,16 +13,17 @@
 <body>
 <header>
         <h1>Shakori Hills Volunteer Portal</h1>
-        <nav>
+        <nav class="nav"> 
+
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'register' %}">Form</a></li>
+                <li><a href="{% url 'form' %}">Form</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
         </nav>
     </header>
     {% block content %}{% endblock content %}
-    {% block footer %}{% endblock footer %} 
+    {% block footer %}{% endblock footer %}
 </body>
 </html>
     <!-- as well as override content bits-->
