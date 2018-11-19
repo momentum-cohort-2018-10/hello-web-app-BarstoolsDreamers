@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from collection.backends import MyRegistrationView
 from django.contrib.auth.views import (
     PasswordResetView,
     PasswordResetDoneView,
@@ -27,7 +28,6 @@ from django.views.generic import TemplateView
 from collection import views
 
 urlpatterns = [
-    path('accounts/', include('registration.backends.simple.urls')),
     path('', views.index, name="home"),
     path('form/',
          TemplateView.as_view(template_name='form.html'),
@@ -35,7 +35,7 @@ urlpatterns = [
     path('contact/',
          TemplateView.as_view(template_name='contact.html'),
          name='contact'),
-    path('volunteer/<slug>/', views.volunteer_detail,
+    path('volunteers/<slug>/', views.volunteer_detail,
          name='volunteer_detail'),
     path('volunteers/<slug>/edit',
          views.edit_volunteer, name='edit_volunteer'),
@@ -49,6 +49,11 @@ urlpatterns = [
         template_name='registration/password_reset_complete.html'), name="password_reset_complete"),
     path('accounts/', include('registration.backends.simple.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/register/', MyRegistrationView.as_view(),
+         name='registration_register'),
+    path('accounts/create_volunteer/', views.create_volunteer,
+         name='registration_create_volunteer'),
+    path('accounts/', include('registration.backends.simple.urls')),
 ]
 
 if settings.DEBUG:

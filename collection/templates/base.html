@@ -22,16 +22,10 @@
             </ul>
             {% if user.is_authenticated %}
             <uL>
-                <li>
-                    <a href="{% url 'auth_logout' %}">Logout</a>
-                </li>
+                <li><a href="{% url 'auth_logout' %}">Logout</a></li>
                 {% else %}
-                <li>
-                    <a href="{% url 'auth_login' %}">Login</a>
-                </li>
-                <li>
-                    <a href="{% url 'registration_register'%}">Register</a>
-                </li>
+                <li><a href="{% url 'auth_login' %}">Login</a></li>
+                <li><a href="{% url 'registration_register'%}">Register</a></li>
             </ul>
             {% endif %}
         </nav>
@@ -40,4 +34,5 @@
     {% block footer %}{% endblock footer %}
 </body>
 </html>
+
     <!-- as well as override content bits-->
