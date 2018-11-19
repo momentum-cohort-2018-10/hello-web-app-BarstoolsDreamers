@@ -6,8 +6,11 @@
 
 {% block content %}
 
-    <h2>{{ volunteer.name }}</h2>
+    <h1>{{ volunteer.name }}</h1>
     <p>{{ volunteer.description }}</p>
+    <a href="{% url 'edit_volunteer' slug=volunteer.slug %}">
+        Edit me!
+    </a>
    
 {% endblock content %}
 
